@@ -63,6 +63,7 @@ tests/
 - README.md                  # 專案說明文件
 
 ======== 流程簡述 ========
+
 使用者登入 → 後端驗證 JWT → 回傳 token
 
 使用者透過 WebSocket 連線 → 後端 websocket_manager 記錄連線
@@ -72,5 +73,6 @@ tests/
 前端接收訊息 → 顯示通知或更新列表
 
 Redis 支援跨實例廣播（MVP階段可單機即可）
+
 
 
