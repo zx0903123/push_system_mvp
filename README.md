@@ -18,15 +18,14 @@ App will be available at http://localhost:8000 and WebSocket endpoint at ws://lo
 
 ======== 檔案架構 ========
 
-push_system_mvp
 app/
- __init__.py            # 標記 app 是 Python package，可選初始化程式碼
- main.py                # FastAPI 啟動入口，初始化路由、WebSocket、DB連線
- config.py              # 系統配置 (DB連線、Redis設定、JWT密鑰等)
- models/
-    __init__.py        # 標記 models 是 package
-    user.py            # 定義使用者 ORM 模型 (User table)
-    message.py         # 定義推播訊息 ORM 模型 (Message table)
+- __init__.py            # 標記 app 是 Python package，可選初始化程式碼
+- main.py                # FastAPI 啟動入口，初始化路由、WebSocket、DB連線
+- config.py              # 系統配置 (DB連線、Redis設定、JWT密鑰等)
+- models/
+  __init__.py        # 標記 models 是 package
+  user.py            # 定義使用者 ORM 模型 (User table)
+  message.py         # 定義推播訊息 ORM 模型 (Message table)
 
 │
 │   ├── schemas/
@@ -69,38 +68,3 @@ app/
 發送推播訊息 → push_service 處理邏輯 → 儲存資料庫 → 廣播到所有線上用戶
 前端接收訊息 → 顯示通知或更新列表
 Redis 支援跨實例廣播（MVP階段可單機即可）
-
-[ 前端 Web / Browser ]
-        │
-        │ HTTP API 請求 (登入 / 註冊 / 發送訊息)
-        │
-        ▼
-[ FastAPI 後端 ]
-  ├─ /auth           ---> JWT 認證 (登入/註冊)
-  ├─ /message        ---> 發送推播、查詢歷史
-  ├─ services/
-  │     ├─ push_service.py         ---> 處理訊息、群發邏輯
-  │     └─ websocket_manager.py   ---> WebSocket 連線管理
-  └─ crud/                          ---> 資料庫操作
-        │
-        ▼
-[ 資料庫 (PostgreSQL / MySQL) ]
-  ├─ users
-  └─ messages
-        │
-        ▼
-[ Redis (快取 / Pub-Sub) ]
-  ├─ 保存線上用戶連線資訊
-  └─ 協助即時廣播訊息到多個後端實例
-        │
-        ▼
-[ 前端 Web / Browser ]
-
-  └─ WebSocket 接收即時推播
-
-
-
-
-
-
-
