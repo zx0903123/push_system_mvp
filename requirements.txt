@@ -1,0 +1,12 @@
+
+fastapi>=0.95.0
+uvicorn[standard]>=0.22.0
+SQLAlchemy>=1.4
+psycopg2-binary>=2.9  # PostgreSQL driver
+aioredis>=2.0.0
+python-jose>=3.3.0
+passlib[bcrypt]>=1.7.4
+alembic>=1.10.0
+pytest>=7.0.0
+pytest-asyncio>=0.20.2
+httpx>=0.24.0
