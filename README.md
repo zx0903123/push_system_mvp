@@ -20,13 +20,13 @@ App will be available at http://localhost:8000 and WebSocket endpoint at ws://lo
 
 push_system_mvp
 app/
-- __init__.py            # 標記 app 是 Python package，可選初始化程式碼
-- main.py                # FastAPI 啟動入口，初始化路由、WebSocket、DB連線
-- config.py              # 系統配置 (DB連線、Redis設定、JWT密鑰等)
-- models/
-__init__.py        # 標記 models 是 package
-user.py            # 定義使用者 ORM 模型 (User table)
-message.py         # 定義推播訊息 ORM 模型 (Message table)
+ __init__.py            # 標記 app 是 Python package，可選初始化程式碼
+ main.py                # FastAPI 啟動入口，初始化路由、WebSocket、DB連線
+ config.py              # 系統配置 (DB連線、Redis設定、JWT密鑰等)
+ models/
+    __init__.py        # 標記 models 是 package
+    user.py            # 定義使用者 ORM 模型 (User table)
+    message.py         # 定義推播訊息 ORM 模型 (Message table)
 
 │
 │   ├── schemas/
@@ -97,6 +97,7 @@ Redis 支援跨實例廣播（MVP階段可單機即可）
 [ 前端 Web / Browser ]
 
   └─ WebSocket 接收即時推播
+
 
 
 
