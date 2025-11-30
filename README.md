@@ -17,6 +17,7 @@ docker-compose up --build
 App will be available at http://localhost:8000 and WebSocket endpoint at ws://localhost:8000/ws?token=<jwt>
 
 ======== 檔案架構 ========
+
 push_system_mvp/
 ├── app/
 │   ├── __init__.py            # 標記 app 是 Python package，可選初始化程式碼
@@ -94,4 +95,5 @@ Redis 支援跨實例廣播（MVP階段可單機即可）
         │
         ▼
 [ 前端 Web / Browser ]
+
   └─ WebSocket 接收即時推播
