@@ -64,8 +64,13 @@ tests/
 
 ======== 流程簡述 ========
 使用者登入 → 後端驗證 JWT → 回傳 token
+
 使用者透過 WebSocket 連線 → 後端 websocket_manager 記錄連線
+
 發送推播訊息 → push_service 處理邏輯 → 儲存資料庫 → 廣播到所有線上用戶
+
 前端接收訊息 → 顯示通知或更新列表
+
 Redis 支援跨實例廣播（MVP階段可單機即可）
+
 
