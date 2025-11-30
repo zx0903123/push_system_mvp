@@ -25,8 +25,11 @@ app/
 - config.py              # 系統配置 (DB連線、Redis設定、JWT密鑰等)
 - models/
 __init__.py        # 標記 models 是 package
+
 user.py            # 定義使用者 ORM 模型 (User table)
+
 message.py         # 定義推播訊息 ORM 模型 (Message table)
+
 │
 │   ├── schemas/
 │   │   ├── __init__.py        # 標記 schemas 是 package
@@ -96,6 +99,7 @@ Redis 支援跨實例廣播（MVP階段可單機即可）
 [ 前端 Web / Browser ]
 
   └─ WebSocket 接收即時推播
+
 
 
 
